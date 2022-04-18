@@ -7,8 +7,8 @@ form.addEventListener('submit', function(e) {
     const peso = Number(inputPeso.value);
     const altura = Number(inputAltura.value);
 
-    if (typeof peso !== 'number') {
-        setResultado('Peso invalido teste', false)
+    if (!peso) {
+        setResultado(`Peso invalido, se digitou seu peso utilizando ',' tente com '.'`, false)
         return;
     }
 
