@@ -7,7 +7,7 @@ form.addEventListener('submit', function(e) {
     const peso = Number(inputPeso.value);
     const altura = Number(inputAltura.value);
 
-    if (!peso) {
+    if (typeof peso !== 'number') {
         setResultado('Peso invalido', false)
         return;
     }
