@@ -4,19 +4,16 @@ form.addEventListener('submit', function(e) {
     const inputPeso = e.target.querySelector('#peso');
     const inputAltura = e.target.querySelector('#altura');
 
-    const peso = Number(inputPeso.value);
-    const altura = Number(inputAltura.value);
-
-    peso.replace(',', '.');
-    altura.replace(',', '.');
+    const peso = Number(inputPeso.value.replace(',', '.'));
+    const altura = Number(inputAltura.value.replace(',', '.'));
 
     if (!peso) {
-        setResultado(`Peso invalido, se digitou seu peso com ',' tente com '.'aa`, false)
+        setResultado(`Peso invalido.`, false)
         return;
     }
 
     if (!altura) {
-        setResultado(`Altura invalida, se digitou sua altura com ',' tente com '.'aa`, false)
+        setResultado(`Altura invalida.`, false)
         return;
     }
 
