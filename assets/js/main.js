@@ -7,6 +7,9 @@ form.addEventListener('submit', function(e) {
     const peso = Number(inputPeso.value);
     const altura = Number(inputAltura.value);
 
+    peso.replace(',', '.');
+    altura.replace(',', '.');
+
     if (!peso) {
         setResultado(`Peso invalido, se digitou seu peso com ',' tente com '.'aa`, false)
         return;
@@ -16,9 +19,6 @@ form.addEventListener('submit', function(e) {
         setResultado(`Altura invalida, se digitou sua altura com ',' tente com '.'aa`, false)
         return;
     }
-
-    peso.replace(',', '.');
-    altura.replace(',', '.');
 
     const imc = getImc(peso, altura);
     const nivelImc = getNivelImc(imc);
