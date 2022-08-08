@@ -4,8 +4,8 @@ form.addEventListener('submit', function(e) {
     const inputPeso = e.target.querySelector('#peso');
     const inputAltura = e.target.querySelector('#altura');
 
-    const peso = Number(inputPeso.value.replace(',', '.'));
-    const altura = Number(inputAltura.value.replace(',', '.'));
+    const peso = Number(inputPeso.value.replaceAll(',', '.'));
+    const altura = Number(inputAltura.value.replaceAll(',', '.'));
 
     if (!peso) {
         setResultado(`Peso invalido.`, false)
